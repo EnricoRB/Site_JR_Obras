@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page - Empresa de Obras e Reformas</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              orange: {
+                600: '#caa95c',
+                700: '#b69240'
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="#home" class="flex items-center gap-2 font-semibold text-lg">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-orange-100 text-orange-600">
+              <i data-lucide="hammer" class="h-5 w-5"></i>
+            </span>
+            <span>Júnior Reformas</span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="#servicos" class="nav-link">Serviços</a>
+            <a href="#portfolio" class="nav-link">Portfólio</a>
+            <a href="#depoimentos" class="nav-link">Depoimentos</a>
+            <a href="#contato" class="nav-link">Contato</a>
+          </nav>
+
+          <div class="hidden md:flex">
+            <a href="#contato" class="inline-flex items-center gap-2 rounded-xl bg-orange-600 px-4 py-2 text-white shadow-sm hover:bg-orange-700 transition">
+              <i data-lucide="phone" class="h-4 w-4"></i>
+              Solicitar Orçamento
+            </a>
+          </div>
+
+          <button id="menuBtn" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border bg-white">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
+        <div class="mx-auto max-w-7xl px-4 py-4 space-y-2">
+          <a href="#servicos" class="mobile-link">Serviços</a>
+          <a href="#portfolio" class="mobile-link">Portfólio</a>
+          <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+          <a href="#contato" class="mobile-link">Contato</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Hero -->
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-orange-50 to-white"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <span class="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm text-orange-700 bg-orange-50">
+                <i data-lucide="sparkles" class="h-4 w-4"></i>
+                Reformas residenciais e comerciais
+              </span>
+              <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
+                Qualidade, prazo e um resultado que faz você dizer: <span class="text-orange-600">uau!</span>
+              </h1>
+              <p class="mt-4 text-lg text-gray-600 max-w-2xl">Projetos completos de reforma e acabamento com equipe especializada, materiais de primeira e acompanhamento do início ao fim.</p>
+              <div class="mt-6 flex gap-3">
+                <a href="#portfolio" class="btn-secondary">
+                  <i data-lucide="images" class="h-4 w-4"></i>
+                  Ver Portfólio
+                </a>
+                <a href="#contato" class="btn-primary">
+                  <i data-lucide="message-circle" class="h-4 w-4"></i>
+                  Fale Conosco
+                </a>
+              </div>
+              <dl class="mt-10 grid grid-cols-3 gap-4 text-center">
+                <div class="stat">
+                  <dt class="stat-value">10+</dt>
+                  <dd class="stat-label">Anos de experiência</dd>
+                </div>
+                <div class="stat">
+                  <dt class="stat-value">200+</dt>
+                  <dd class="stat-label">Projetos entregues</dd>
+                </div>
+                <div class="stat">
+                  <dt class="stat-value">100%</dt>
+                  <dd class="stat-label">Clientes satisfeitos</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="relative">
+              <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow ring-1 ring-black/5">
+                <img src="https://images.pexels.com/photos/271795/pexels-photo-271795.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Projeto de reforma" class="h-full w-full object-cover">
+              </div>
+              <div class="absolute -bottom-6 -right-6 hidden sm:block">
+                <div class="rounded-xl bg-white p-4 shadow-lg ring-1 ring-black/5">
+                  <div class="flex items-center gap-3">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-orange-100 text-orange-600">
+                      <i data-lucide="shield-check"></i>
+                    </span>
+                    <div>
+                      <p class="text-sm font-medium">Obra Garantida</p>
+                      <p class="text-xs text-gray-500">Compromisso com qualidade</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Serviços -->
+      <section id="servicos" class="py-16 sm:py-24 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center">
+          <h2 class="text-3xl font-bold">Nossos Serviços</h2>
+          <p class="mt-2 text-gray-600">Oferecemos soluções completas para construção, reforma e acabamento, atendendo desde residências até estabelecimentos comerciais.</p>
+        </div>
+
+        <!-- CARROSSEL PAGINADO: 2 páginas (3 cards por página) -->
+        <div class="svc-carousel mt-10">
+          <button id="svcPrev" class="svc-arrow svc-left" aria-label="Anterior"><i data-lucide="chevron-left"></i></button>
+          <div class="svc-viewport">
+            <div class="svc-track" id="svcTrack">
+              <!-- Página 1 -->
+              <div class="svc-page">
+                <article class="service-card">
+                  <div class="svc-header">
+                    <span class="svc-icon"><i data-lucide="hammer"></i></span>
+                    <h3>Reformas Residenciais</h3>
+                  </div>
+                  <p>Reformas completas ou parciais de residências, incluindo cozinhas, banheiros, salas e quartos.</p>
+                  <ul class="svc-list">
+                    <li><i data-lucide="check-circle-2"></i> Cozinhas planejadas</li>
+                    <li><i data-lucide="check-circle-2"></i> Banheiros modernos</li>
+                    <li><i data-lucide="check-circle-2"></i> Quartos e salas</li>
+                  </ul>
+                </article>
+
+                <article class="service-card">
+                  <div class="svc-header">
+                    <span class="svc-icon"><i data-lucide="users"></i></span>
+                    <h3>Construção Civil</h3>
+                  </div>
+                  <p>Construção de casas, sobrados e edifícios comerciais com projeto arquitetônico completo.</p>
+                  <ul class="svc-list">
+                    <li><i data-lucide="check-circle-2"></i> Casas térreas</li>
+                    <li><i data-lucide="check-circle-2"></i> Sobrados</li>
+                    <li><i data-lucide="check-circle-2"></i> Edifícios comerciais</li>
+                  </ul>
+                </article>
+
+                <article class="service-card">
+                  <div class="svc-header">
+                    <span class="svc-icon"><i data-lucide="medal"></i></span>
+                    <h3>Acabamentos Premium</h3>
+                  </div>
+                  <p>Acabamentos de alto padrão com materiais nobres e técnicas especializadas.</p>
+                  <ul class="svc-list">
+                    <li><i data-lucide="check-circle-2"></i> Mármores e granitos</li>
+                    <li><i data-lucide="check-circle-2"></i> Madeiras especiais</li>
+                    <li><i data-lucide="check-circle-2"></i> Metais e vidros</li>
+                  </ul>
+                </article>
+              </div>
+
+              <!-- Página 2 -->
+              <div class="svc-page">
+                <article class="service-card">
+                  <div class="svc-header">
+                    <span class="svc-icon"><i data-lucide="paint-roller"></i></span>
+                    <h3>Pintura &amp; Texturas</h3>
+                  </div>
+                  <p>Pintura interna e externa, texturas e revestimentos com acabamento premium.</p>
+                  <ul class="svc-list">
+                    <li><i data-lucide="check-circle-2"></i> Tintas premium</li>
+                    <li><i data-lucide="check-circle-2"></i> Texturas decorativas</li>
+                    <li><i data-lucide="check-circle-2"></i> Tratamento de paredes</li>
+                  </ul>
+                </article>
+
+                <article class="service-card">
+                  <div class="svc-header">
+                    <span class="svc-icon"><i data-lucide="plug"></i></span>
+                    <h3>Elétrica</h3>
+                  </div>
+                  <p>Instalações e adequações elétricas conforme normas técnicas, com total segurança.</p>
+                  <ul class="svc-list">
+                    <li><i data-lucide="check-circle-2"></i> Quadros &amp; disjuntores</li>
+                    <li><i data-lucide="check-circle-2"></i> Iluminação LED</li>
+                    <li><i data-lucide="check-circle-2"></i> Cabeamento &amp; tomadas</li>
+                  </ul>
+                </article>
+
+                <article class="service-card">
+                  <div class="svc-header">
+                    <span class="svc-icon"><i data-lucide="droplets"></i></span>
+                    <h3>Hidráulica</h3>
+                  </div>
+                  <p>Instalação e manutenção de redes de água e esgoto com execução limpa e segura.</p>
+                  <ul class="svc-list">
+                    <li><i data-lucide="check-circle-2"></i> Tubulações e conexões</li>
+                    <li><i data-lucide="check-circle-2"></i> Água quente e fria</li>
+                    <li><i data-lucide="check-circle-2"></i> Louças e metais</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
+          <button id="svcNext" class="svc-arrow svc-right" aria-label="Próximo"><i data-lucide="chevron-right"></i></button>
+          <div class="svc-dots" id="svcDots"></div>
+        </div>
+
+      </section>
+
+      <!-- Portfólio -->
+      <section id="portfolio" class="py-16 sm:py-24 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-3xl font-bold">Portfólio</h2>
+            <p class="mt-2 text-gray-600">Selecione uma categoria e explore nossos projetos.</p>
+          </div>
+
+          <!-- Filtros -->
+          <div id="filters" class="mt-8 flex flex-wrap justify-center gap-3"></div>
+
+          <!-- Grid de projetos -->
+          <div id="projectsGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+      </section>
+
+      <!-- Depoimentos -->
+      <section id="depoimentos" class="py-16 sm:py-24 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-3xl font-bold">O que dizem nossos clientes</h2>
+            <p class="mt-2 text-gray-600">Feedback real de quem já contratou nossos serviços.</p>
+          </div>
+
+          <div id="testimonials" class="mt-10 grid lg:grid-cols-3 gap-6"></div>
+        </div>
+      </section>
+
+      <!-- Contato -->
+      <section id="contato" class="py-16 sm:py-24 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-3xl font-bold">Entre em contato</h2>
+            <p class="mt-2 text-gray-600">Tire dúvidas ou peça um orçamento sem compromisso.</p>
+          </div>
+
+          
+          <div class="mt-10 grid md:grid-cols-3 gap-8">
+            <a href="https://wa.me/5500000000000" target="_blank" class="pill-card">
+              <span class="pill-icon is-green"><i data-lucide="phone"></i></span>
+              <div class="pill-copy">
+                <p class="font-medium">WhatsApp</p>
+                <p class="text-gray-600 text-sm">Clique para conversar</p>
+              </div>
+            </a>
+            <a href="mailto:contato@suaempresa.com" class="pill-card">
+              <span class="pill-icon is-blue"><i data-lucide="mail"></i></span>
+              <div class="pill-copy">
+                <p class="font-medium">E-mail</p>
+                <p class="text-gray-600 text-sm">contato@suaempresa.com</p>
+              </div>
+            </a>
+            <div class="pill-card !cursor-default">
+              <span class="pill-icon is-orange"><i data-lucide="map-pin"></i></span>
+              <div class="pill-copy">
+                <p class="font-medium">Endereço</p>
+                <p class="text-gray-600 text-sm">Sua cidade - SP</p>
+              </div>
+            </div>
+          </div>
+
+        </section>
+    </main>
+
+    
+    
+    <!-- Modal de galeria (clean, dentro do quadro) -->
+    <div id="galleryModal" class="fixed inset-0 z-50 hidden">
+      <!-- backdrop -->
+      <div class="absolute inset-0 bg-black/80"></div>
+
+      <!-- container central com bordas arredondadas -->
+      <div class="relative mx-auto my-10 h-[86vh] w-full max-w-6xl px-4">
+        <div class="relative h-full w-full rounded-2xl overflow-hidden bg-black">
+          <!-- topbar (título à esquerda, fechar à direita) -->
+          <div class="absolute top-3 left-3 right-3 z-10 flex items-center justify-between">
+            <div class="rounded-xl bg-black/40 backdrop-blur px-3 py-2 text-white">
+              <h3 id="modalTitle" class="font-medium"></h3>
+            </div>
+            <button id="closeModal" class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-black/40 text-white hover:bg-black/60">
+              <i data-lucide="x"></i>
+            </button>
+          </div>
+
+          <!-- imagem (sem bordas brancas) -->
+          <img
+            id="modalImage"
+            src=""
+            alt=""
+            class="absolute inset-0 h-full w-full object-cover object-center"
+          />
+
+          <!-- setas dentro do quadro -->
+          <button id="prevImage" class="modal-arrow left-3">
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <button id="nextImage" class="modal-arrow right-3">
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="border-t border-gray-100 py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-600">&copy; <span id="year"></span> Júnior Reformas. Todos os direitos reservados.</p>
+        <div class="flex items-center gap-3">
+          <a href="#" class="social"><i data-lucide="instagram"></i></a>
+          <a href="#" class="social"><i data-lucide="facebook"></i></a>
+          <a href="#" class="social"><i data-lucide="phone"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>window.__SITE_DATA__ = {projects: [{"id": 1, "title": "Cozinha Moderna Integrada", "category": "cozinha", "thumbnail": "https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=800", "images": ["https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&w=1200"], "description": "Reforma completa de cozinha com conceito aberto, bancada em quartzo e acabamentos de luxo."}, {"id": 2, "title": "Sala de Estar Contemporânea", "category": "sala", "thumbnail": "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800", "images": ["https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200"], "description": "Projeto de sala moderna com móveis planejados e iluminação especial."}, {"id": 3, "title": "Quarto Principal Elegante", "category": "quarto", "thumbnail": "https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=800", "images": ["https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1200"], "description": "Suite master com closet integrado e banheiro privativo de alto padrão."}, {"id": 4, "title": "Banheiro Spa Premium", "category": "banheiro", "thumbnail": "https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800", "images": ["https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/2736834/pexels-photo-2736834.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/6480223/pexels-photo-6480223.jpeg?auto=compress&cs=tinysrgb&w=1200"], "description": "Banheiro luxuoso com conceito spa, banheira de imersão e acabamentos nobres."}, {"id": 5, "title": "Área Gourmet Externa", "category": "externa", "thumbnail": "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800", "images": ["https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=1200"], "description": "Espaço gourmet completo com churrasqueira, forno e área de convivência."}, {"id": 6, "title": "Escritório Home Office", "category": "escritorio", "thumbnail": "https://images.pexels.com/photos/4050296/pexels-photo-4050296.jpeg?auto=compress&cs=tinysrgb&w=800", "images": ["https://images.pexels.com/photos/4050296/pexels-photo-4050296.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/4050320/pexels-photo-4050320.jpeg?auto=compress&cs=tinysrgb&w=1200", "https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1200"], "description": "Home office moderno com móveis planejados e ambiente produtivo."}], categories: [{"id": "todos", "name": "Todos os Projetos"}, {"id": "cozinha", "name": "Cozinhas"}, {"id": "sala", "name": "Salas"}, {"id": "quarto", "name": "Quartos"}, {"id": "banheiro", "name": "Banheiros"}, {"id": "externa", "name": "Áreas Externas"}, {"id": "escritorio", "name": "Escritórios"}], testimonials: [{"name": "Maria Silva", "location": "São Paulo, SP", "text": "Excelente trabalho! Reformaram minha cozinha e o resultado superou todas as expectativas. Profissionais qualificados e pontualidade impecável.", "rating": 5}, {"name": "João Santos", "location": "Rio de Janeiro, RJ", "text": "Contratei para uma reforma completa do apartamento. Qualidade excepcional e preço justo. Recomendo para todos!", "rating": 5}, {"name": "Ana Costa", "location": "Belo Horizonte, MG", "text": "Transformaram minha casa dos sonhos em realidade. Equipe profissional, materiais de primeira e prazo cumprido.", "rating": 5}]};</script>
+    <script src="./app.js"></script>
+  </body>
+</html>
