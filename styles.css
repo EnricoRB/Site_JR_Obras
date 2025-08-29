@@ -1,4 +1,3 @@
-
 :root{
   --gray-50:#f9fafb; --gray-100:#f3f4f6; --gray-200:#e5e7eb; --gray-700:#374151; --gray-900:#111827;
   --orange-50:#fff7ed; --orange-600:#caa95c; --orange-700:#b69240;
@@ -35,6 +34,23 @@
 .social:hover{ background:var(--gray-50); }
 
 .nav-btn{ border-radius:9999px; background:rgba(255,255,255,.85); padding:.5rem; box-shadow:0 4px 16px rgba(0,0,0,.12); }
+
+/* <<< AUMENTO DO LOGO >>> */
+.brand.brand-pill img{
+  height: clamp(36px, 3.8vw, 54px);   /* era ~22–26px; agora cresce de 36 a 54px */
+  width: auto;
+  display: block;
+}
+
+/* Deixa a barra confortável quando o logo cresce */
+header, .header, .topbar, .navbar{     /* pego os nomes mais comuns do seu header */
+  min-height: 70px;                    /* permite a barra aumentar junto */
+}
+header .container, .header .container,
+.topbar .container, .navbar .container{
+  display: flex;
+  align-items: center;                 /* centraliza verticalmente logo + menu */
+}
 
 
 /* Pill Cards (referência do print) */
@@ -314,3 +330,25 @@
   #servicos .service-card{ width:100%; max-width:100%; border-radius:16px; box-shadow:0 6px 18px rgba(17,24,39,.07); }
 }
 
+/* --- Espaçamento maior do logo no header --- */
+:root{
+  --header-x-pad: clamp(24px, 4vw, 64px);  /* espaçamento lateral */
+  --header-y-pad: clamp(5px, 1.4vw, 8px);/* espaçamento vertical */
+}
+
+/* aplica nos wrappers mais comuns de topo */
+header,
+.header,
+.navbar{
+  padding-left:  var(--header-x-pad);
+  padding-right: var(--header-x-pad);
+  padding-top:   var(--header-y-pad);
+  padding-bottom:var(--header-y-pad);
+}
+
+/* se preferir ainda mais folga só no logo */
+header .brand.brand-pill,
+.header .brand.brand-pill,
+.navbar .brand.brand-pill{
+  margin-left: clamp(8px, 1.2vw, 20px);
+}
