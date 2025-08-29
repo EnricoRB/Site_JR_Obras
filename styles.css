@@ -304,3 +304,13 @@
 #servicos{ --svc-page-gap: 24px; } /* ajuste fino aqui */
 #servicos .svc-track{ gap: var(--svc-page-gap) !important; } /* gap entre páginas */
 #servicos .svc-page{ flex: 0 0 100%; } /* cada página ainda mede 100% da viewport */
+
+/* === Responsivo (mobile) para Serviços: empilhar como os cards de feedback === */
+@media (max-width: 640px){
+  #servicos .svc-arrow, #servicos #svcDots{ display:none !important; }
+  #servicos .svc-viewport{ overflow: visible; }
+  #servicos .svc-track{ display:grid; grid-template-columns: 1fr; gap: 16px !important; padding: 0 !important; }
+  #servicos .svc-page{ display: contents; }
+  #servicos .service-card{ width:100%; max-width:100%; border-radius:16px; box-shadow:0 6px 18px rgba(17,24,39,.07); }
+}
+
